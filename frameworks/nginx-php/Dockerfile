@@ -2,7 +2,7 @@ FROM maxexcloo/nginx:latest
 MAINTAINER Max Schaefer <max@excloo.com>
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E9C74FEEA2098A6E && \
 	echo "deb http://packages.dotdeb.org/ wheezy-php56 all" > /etc/apt/sources.list.d/php.list && \
-	apt-get update && apt-get upgrade && \
+	apt-get update && apt-get upgrade -y && \
 	apt-get install -y php5-cli php5-curl php5-fpm php5-gd php5-mcrypt php5-mysql php5-pgsql php5-sqlite && \
 	apt-get clean && \
 	echo -n > /var/lib/apt/extended_states
